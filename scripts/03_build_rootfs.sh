@@ -16,7 +16,7 @@ WORKSPACE_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 BUSYBOX_SRC="$WORKSPACE_ROOT/kernel/busybox"
 INITRAMFS_DIR="$WORKSPACE_ROOT/kernel/initramfs"
 BUILD_DIR="$WORKSPACE_ROOT/kernel/build"
-JOBS="$(nproc)"
+JOBS=4
 
 STUDENT_ID="${STUDENT_ID:-$(git -C "$WORKSPACE_ROOT" config user.name 2>/dev/null \
                 | tr ' ' '-' | tr -cd '[:alnum:]-' | head -c 20)}"
